@@ -8,23 +8,23 @@ import { useFetch } from './CustomHooks/useFetch';
 
 
 
+
 function App() {
   const [input, setInput] = useState('Argentina');
-  const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${input}&appid=${api_key}`;
-  const {data,loading,error} = useFetch(API_URL,input)
-   
-
+  const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${input}&appid=2f3b59645986fed291996afd5c0ffac5`;
+  const {data, loading, error} = useFetch(API_URL, input);
+  
   const handleUserInput = (inputValue) => {
     setInput(inputValue);
   };
+  
 
   return (
     <div className="App">
       <h1>Consulta del clima</h1>
       <SearchBar onUserInput={handleUserInput} />
       {loading && <ProgressBar />}
-      
-      {data && !loading && <ViewCard content={data} />}
+      {data && !loading && <ViewCard content={data}  />}
     </div>
   );
 }
