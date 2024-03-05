@@ -18,7 +18,7 @@ function App() {
       if (!input) return; // No realizar la solicitud si el término de búsqueda está vacío
       setLoading(true);
       try { 
-        const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${input}&appid=2f3b59645986fed291996afd5c0ffac5`;
+        const API_URL = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${input}&appid=${api_key}`;
         const response = await fetch(API_URL);
         if (!response.ok) {
           throw new Error('Error al obtener los datos');
